@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "gql:download": "apollo client:download-schema --endpoint=https://api.github.com/graphql ./src/core/graphql/schema.json --header=\"Authorization:Bearer ***REMOVED***\"",
-    "gql:parse": "apollo codegen:generate --target=typescript --outputFlat ./src/core/graphql/gql-schema.ts",
+    "gql:parse": "apollo client:codegen --target=typescript --outputFlat ./src/core/graphql/gql-schema.ts",
     "gql": "npm run gql:parse",
     "dev": "parcel src/index.html",
     "clean": "rimraf .cache",
@@ -32,6 +32,9 @@
     "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.9.0",
+    "@graphql-codegen/fragment-matcher": "^1.11.2",
+    "@graphql-codegen/typescript": "^1.9.0",
     "@types/classnames": "^2.2.9",
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",

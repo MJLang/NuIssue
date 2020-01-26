@@ -65,7 +65,7 @@ export const RepositoryFieldComponent: React.FC<Props> = props => {
         </div>
       </div>
       {isOpen && (
-        <ul className="absolute" {...getMenuProps()}>
+        <ul className="absolute z-20" {...getMenuProps()}>
           {props.repositories.map((repo, index) => {
             const itemKlass = classNames('hover:bg-primary', 'hover:text-white', 'px-2', 'py-1', {
               'bg-primary': highlightedIndex === index,

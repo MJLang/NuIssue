@@ -1,0 +1,8 @@
+schema: ./src/core/graphql/schema.json
+generates:
+  ./src/core/graphql/fragmentTypes.json:
+    plugins:
+      - fragment-matcher
+  ./src/core/graphql/github.d.ts:
+    plugins:
+      - typescript
