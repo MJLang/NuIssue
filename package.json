@@ -1,0 +1,45 @@
+{
+  "name": "nuissue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "gql:parse": "apollo codegen:generate --target=typescript --outputFlat ./src/core/graphql/gql-schema.ts",
+    "gql": "npm run gql:parse",
+    "dev": "parcel src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@apollo/react-hooks": "^3.1.3",
+    "apollo-boost": "^0.4.7",
+    "downshift": "^5.0.0-alpha.0",
+    "graphql": "^14.5.8",
+    "graphql-tag": "^2.10.1",
+    "history": "^4.10.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "@types/react-router": "^5.1.4",
+    "@types/react-router-dom": "^5.1.3",
+    "@typescript-eslint/parser": "^2.17.0",
+    "apollo": "^2.21.3",
+    "autoprefixer": "^9.7.4",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^1.19.1",
+    "sass": "^1.25.1-test.1",
+    "tailwindcss": "^1.2.0-canary.5",
+    "typescript": "^3.7.5"
+  }
+}

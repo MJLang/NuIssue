@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "baseUrl": "./src",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "jsx": "react",
+    "types": ["downshift"],
+    "paths": {
+      "~layout": ["./layout"],
+      "~layout/*": ["./layout/*"],
+      "~features": ["./features"],
+      "~features/*": ["./features/*"],
+      "~gql": ["./core/graphql"],
+      "~gql/*": ["./core/graphql/*"],
+      "~core": ["./core"],
+      "~core/*": ["./core/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

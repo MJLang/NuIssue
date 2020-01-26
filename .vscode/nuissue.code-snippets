@@ -1,0 +1,26 @@
+{
+  "RFC": {
+    "prefix": "rfc",
+    "scope": "typescriptreact",
+    "body": [
+      "import React from 'react'",
+      "",
+      "interface PublicProps {",
+      "",
+      "}",
+      "type Props = PublicProps;",
+      "",
+      "const $1: React.FC<Props> = props => {",
+      "",
+      "return <div></div>",
+      "}",
+      "export default $1"
+    ],
+    "description": "Creates a React FC Componenet"
+  },
+  "Create a New Query": {
+    "prefix": "cgq",
+    "scope": "typescript,typescriptreact",
+    "body": ["import gql from 'graphql-tag';", "", "export const $1 = gql`", "$0", "`;"]
+  }
+}
