@@ -1,0 +1,21 @@
+query searchIssue($query: String!, $count: Int) {
+  search(query: $query, type: ISSUE, first: $count) {
+    nodes {
+      ... on Issue {
+        id
+        title
+        state
+        closed
+        author {
+          login
+        }
+        labels(first: 3) {
+          nodes {
+            color
+            name
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { searchRepository_search_nodes_Repository } from '~gql/gql-schema';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useCombobox } from 'downshift';
 import { Input } from '~layout/input';
 import classNames from 'classnames';
+
+let debounceLock: NodeJS.Timeout | null;
 
 interface PublicProps {
   repositories: searchRepository_search_nodes_Repository[];
@@ -16,10 +18,22 @@ interface PublicProps {
 
 type Props = PublicProps;
 
-let debounceLock: number;
-
 export const RepositoryFieldComponent: React.FC<Props> = props => {
   const item = props.repositories.find(x => x.name === props.repositoryName);
+  const [searchTerm, setSearchTerm] = useState(props.repositoryName);
+
+  function debounceInput(input: string) {
+    setSearchTerm(input);
+    if (!debounceLock) {
+      debounceLock = setInterval(() => {
+        props.onNameChange(searchTerm);
+        if (debounceLock) {
+          clearTimeout(debounceLock);
+        }
+        debounceLock = null;
+      }, 300) as NodeJS.Timeout;
+    }
+  }
 
   const {
     isOpen,
@@ -34,7 +48,7 @@ export const RepositoryFieldComponent: React.FC<Props> = props => {
     items: props.repositories,
     itemToString: item => item.name,
     onInputValueChange: event => {
-      props.onNameChange(event.inputValue ?? '');
+      debounceInput(event.inputValue ?? '');
     },
     onSelectedItemChange: event => {
       if (event.selectedItem) {
