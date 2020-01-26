@@ -6,15 +6,14 @@
       "import React from 'react'",
       "",
       "interface PublicProps {",
-      "",
+      "$2",
       "}",
       "type Props = PublicProps;",
       "",
-      "const $1: React.FC<Props> = props => {",
-      "",
-      "return <div></div>",
-      "}",
-      "export default $1"
+      "export const $1: React.FC<Props> = props => {",
+      "$0",
+      "  return <div></div>",
+      "}"
     ],
     "description": "Creates a React FC Componenet"
   },

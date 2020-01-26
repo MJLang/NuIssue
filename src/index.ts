@@ -1,5 +1,3 @@
-const boostrap = () => {
-  console.log('Hello World');
-};
+import { bootstrap } from '~core/nuissue';
 
-boostrap();
+bootstrap();

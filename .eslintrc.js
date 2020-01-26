@@ -22,8 +22,5 @@ module.exports = {
     'react/no-direct-mutation-state': 'error',
     'react/no-typos': 'error',
     /* Warn */
-    overrides: {
-      excludedFiles: ['./tailwind.js', './apollo.config.js', './postcss.config.js'],
-    },
   },
 };
