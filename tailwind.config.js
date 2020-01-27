@@ -60,6 +60,8 @@ module.exports = {
       '50': '25rem',
       '56': '28rem',
       '64': '32rem',
+      '80': '40rem',
+      '100': '50rem',
     },
     backgroundColor: theme => theme('colors'),
     backgroundPosition: {
@@ -231,6 +233,7 @@ module.exports = {
         '5xl': '64rem',
         '6xl': '72rem',
         full: '100%',
+        ...theme('spacing'),
         ...breakpoints(theme('screens')),
       };
     },

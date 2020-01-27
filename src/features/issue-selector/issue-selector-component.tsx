@@ -48,6 +48,7 @@ export const IssueselectorComponent: React.FC<Props> = props => {
     onInputValueChange: ev => {
       props.onInputChange(ev.inputValue ?? '');
     },
+    initialIsOpen: true,
     onSelectedItemChange: ev => {
       if (ev.selectedItem) {
         props.onIssueSelect({
@@ -60,7 +61,7 @@ export const IssueselectorComponent: React.FC<Props> = props => {
   });
 
   return (
-    <div className="relative">
+    <div className="">
       <div {...getComboboxProps()}>
         <Input
           {...getInputProps({ refKey: 'innerRef', value: props.searchTerm })}
@@ -69,11 +70,12 @@ export const IssueselectorComponent: React.FC<Props> = props => {
         />
       </div>
       {isOpen && (
-        <ul {...getMenuProps()}>
+        <ul {...getMenuProps()} className="absolute z-10 max-w-100 shadow">
           {props.issues.map((issue, index) => (
             <IssueItem
               issue={issue}
               key={`${issue}${index}`}
+              selected={highlightedIndex === index}
               {...getItemProps({ item: issue, index: index, refKey: 'innerRef' })}
             />
           ))}
