@@ -1,4 +1,4 @@
 export const CONFIG = {
   gqlEndpoint: 'https://api.github.com/graphql',
-  authHeader: '***REMOVED***',
+  authHeader: '<TOKEN>',
 };

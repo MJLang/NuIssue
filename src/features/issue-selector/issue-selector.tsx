@@ -57,6 +57,8 @@ export const IssueSelector: React.FC<Props> = props => {
                 count: 5,
               },
             });
+          } else {
+            setIssues([]);
           }
           if (debounceLock) {
             clearTimeout(debounceLock);
